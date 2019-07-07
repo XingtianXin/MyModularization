@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- COMMON VALUES -->
+    <dimen name="toolbar_height">56dp</dimen>
+    <dimen name="toolbar_margin">48dp</dimen>
+
+    <!-- CUSTOM TEXT SIZES -->
+    <dimen name="txt_show_history">17sp</dimen>
+    <dimen name="txt_toolbar_title">19sp</dimen>
+</resources>

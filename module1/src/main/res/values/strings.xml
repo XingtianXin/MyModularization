@@ -1,0 +1,4 @@
+<resources>
+    <string name="module1_name">Module1</string>
+    <string name="module1_description_text">This is Module1 Test String</string>
+</resources>
