@@ -14,7 +14,7 @@ import dagger.android.ContributesAndroidInjector;
  * Time: 10:11
  */
 @Module(subcomponents = {
-        BaseActivityComponent.class   //1111111111 subComponent=BaseActivityComponent
+        BaseActivityComponent.class
 })
 public abstract class Module1AllActivityModule {
 

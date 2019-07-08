@@ -15,16 +15,17 @@ import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.basemodule.service.Module1ExposeService;
+import com.example.basemodule.utils.ARouterConstants;
 import com.example.module2.ui.BlankFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-@Route(path = "/app/MainActivity")
+@Route(path = ARouterConstants.MAIN_ACTIVITY)
 public class MainActivity extends AppCompatActivity implements BlankFragment.OnFragmentInteractionListener {
 
-    @Autowired(name = "/module1/Module1Service")
+    @Autowired(name = ARouterConstants.MODULE1_EXPOSE_SERVICE)
     public Module1ExposeService myTestService;
 
     @BindView(R2.id.app_textview)
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements BlankFragment.OnF
 
     @OnClick(R2.id.app_button)
     public void onClickEvent(View view) {
-        ARouter.getInstance().build("/module1/Module1Activity")
+        ARouter.getInstance().build(ARouterConstants.MODULE1_ACTIVITY)
                 .navigation();
     }
 
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements BlankFragment.OnF
 
     @OnClick(R2.id.app_get_m2_fragment_button)
     public void getModule2Fragemnt(View view) {
-        Fragment m2Fragment = (Fragment) ARouter.getInstance().build("/module2/blank_fragment").navigation();
+        Fragment m2Fragment = (Fragment) ARouter.getInstance().build(ARouterConstants.MODULE2_BLANK_FRAGMENT).navigation();
         if (m2Fragment == null) {
             Log.d("XXT", "mFragment is null");
             return;

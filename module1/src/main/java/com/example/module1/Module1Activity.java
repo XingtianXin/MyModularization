@@ -10,6 +10,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.basemodule.base.BaseMvpActivity;
 import com.example.basemodule.model.SharedPrefsService;
+import com.example.basemodule.utils.ARouterConstants;
 
 //import com.example.module1.R2;
 
@@ -18,7 +19,7 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import dagger.android.AndroidInjector;
 
-@Route(path = "/module1/Module1Activity")
+@Route(path = ARouterConstants.MODULE1_ACTIVITY)
 public class Module1Activity extends BaseMvpActivity {
 
     @BindView(R2.id.module1_textview1)
@@ -33,7 +34,7 @@ public class Module1Activity extends BaseMvpActivity {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_module1;
+        return R.layout.module1_activity_main;
     }
 
     @Override

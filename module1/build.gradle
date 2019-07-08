@@ -1,7 +1,7 @@
-if (!isNeedModule1.toBoolean()) {
-    apply plugin: 'com.android.application'
-} else {
+if (isNeedModule1.toBoolean()) {
     apply plugin: 'com.android.library'
+} else {
+    apply plugin: 'com.android.application'
 }
 apply plugin: 'com.jakewharton.butterknife'
 
@@ -42,6 +42,16 @@ android {
                 manifest.srcFile 'src/main/module/AndroidManifest.xml'
             }
         }
+    }
+
+    // Butterknife requires Java 8.
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        abortOnError false
     }
 }
 

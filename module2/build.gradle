@@ -1,7 +1,7 @@
-if (!isNeedModule2.toBoolean()) {
-    apply plugin: 'com.android.application'
-} else {
+if (isNeedModule2.toBoolean()) {
     apply plugin: 'com.android.library'
+} else {
+    apply plugin: 'com.android.application'
 }
 
 android {
@@ -42,6 +42,10 @@ android {
                 manifest.srcFile 'src/main/module/AndroidManifest.xml'
             }
         }
+    }
+
+    lintOptions {
+        abortOnError false
     }
 }
 

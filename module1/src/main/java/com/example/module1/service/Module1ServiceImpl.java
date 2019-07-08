@@ -5,9 +5,10 @@ import android.content.Context;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.example.basemodule.service.Module1ExposeService;
+import com.example.basemodule.utils.ARouterConstants;
 import com.example.basemodule.utils.Log;
 
-@Route(path = "/module1/Module1Service")
+@Route(path = ARouterConstants.MODULE1_EXPOSE_SERVICE)
 public class Module1ServiceImpl implements Module1ExposeService {
     private static final String TAG = "XXT";
     @Override

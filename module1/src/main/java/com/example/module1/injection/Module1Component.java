@@ -6,6 +6,7 @@ package com.example.module1.injection;
  * Time: 10:14
  */
 
+import com.example.basemodule.base.BaseApplication;
 import com.example.basemodule.injection.modules.BaseGlobalModule;
 
 import javax.inject.Singleton;
@@ -27,4 +28,5 @@ import dagger.android.support.AndroidSupportInjectionModule;
         Module1AllActivityModule.class
 })
 public interface Module1Component {
+    void inject(BaseApplication application); //
 }

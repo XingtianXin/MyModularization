@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.example.basemodule.utils.ARouterConstants;
 import com.example.module2.R;
 
 /**
@@ -21,7 +22,7 @@ import com.example.module2.R;
  * Use the {@link BlankFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-@Route(path = "/module2/blank_fragment")
+@Route(path = ARouterConstants.MODULE2_BLANK_FRAGMENT)
 public class BlankFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
