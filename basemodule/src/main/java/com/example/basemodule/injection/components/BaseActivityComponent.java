@@ -1,5 +1,6 @@
 package com.example.basemodule.injection.components;
 
+import com.example.basemodule.base.BaseActivity;
 import com.example.basemodule.base.BaseMvpActivity;
 
 import dagger.Subcomponent;
@@ -15,10 +16,10 @@ import dagger.android.AndroidInjector;
 @Subcomponent(modules = {
         AndroidInjectionModule.class,
 })
-public interface BaseActivityComponent extends AndroidInjector<BaseMvpActivity>{
+public interface BaseActivityComponent extends AndroidInjector<BaseActivity>{
     //每一个继承BaseActivity（BaseMVPActivity）的Activity，都共享同一个SubComponent
     @Subcomponent.Builder
-    abstract class Builder extends AndroidInjector.Builder<BaseMvpActivity> {
+    abstract class Builder extends AndroidInjector.Builder<BaseActivity> {
 
     }
 }

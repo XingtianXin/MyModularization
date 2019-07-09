@@ -20,7 +20,7 @@ import butterknife.BindView;
 import dagger.android.AndroidInjector;
 
 @Route(path = ARouterConstants.MODULE1_ACTIVITY)
-public class Module1Activity extends BaseMvpActivity {
+public class Module1Activity extends BaseMvpActivity<Module1Presenter> {
 
     @BindView(R2.id.module1_textview1)
     TextView module1Textview1;
@@ -50,11 +50,5 @@ public class Module1Activity extends BaseMvpActivity {
     private void initView() {
         module1Textview1.setText(R.string.module1_name);
         module1Textview2.setText(R.string.module1_description_text);
-    }
-
-    //应该不需要这个方法就可以，再看看
-    @Override
-    public AndroidInjector<Fragment> fragmentInjector() {
-        return null;
     }
 }

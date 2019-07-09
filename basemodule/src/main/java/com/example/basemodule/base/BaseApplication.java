@@ -10,29 +10,22 @@ import com.example.basemodule.BuildConfig;
 import javax.inject.Inject;
 
 import dagger.android.AndroidInjector;
+import dagger.android.DaggerApplication;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasActivityInjector;
 
-public abstract class BaseApplication extends Application implements HasActivityInjector {
+public abstract class BaseApplication extends DaggerApplication {
 
     static private BaseApplication mApplication;
 
-    @Inject
-    DispatchingAndroidInjector<Activity> dispatchingAndroidInjector;
     @Override
     public void onCreate() {
         super.onCreate();
         mApplication = this;
         initRouter();
-        initInject();
     }
 
     protected abstract String getBaseUrl();
-    abstract protected void injectApp();
-
-    private void initInject(){
-        injectApp();
-    }
 
     public static BaseApplication getInstance(){
         return mApplication;
@@ -40,11 +33,6 @@ public abstract class BaseApplication extends Application implements HasActivity
 
     public static Context getContext() {
         return mApplication;
-    }
-
-    @Override
-    public AndroidInjector<Activity> activityInjector() {
-        return dispatchingAndroidInjector;
     }
 
     private void initRouter() {

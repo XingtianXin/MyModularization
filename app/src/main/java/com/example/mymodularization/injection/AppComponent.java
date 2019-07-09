@@ -3,11 +3,13 @@ package com.example.mymodularization.injection;
 import com.example.basemodule.base.BaseApplication;
 import com.example.basemodule.injection.modules.BaseGlobalModule;
 import com.example.module1.injection.Module1AllActivityModule;
+import com.example.mymodularization.App;
 
 import javax.inject.Singleton;
 
 import dagger.Component;
 import dagger.android.AndroidInjectionModule;
+import dagger.android.AndroidInjector;
 
 /**
  * Created by Xingtian.Xin
@@ -33,6 +35,6 @@ import dagger.android.AndroidInjectionModule;
         //NewsGlobalModule.class,
 
 })
-public interface AppComponent {
+public interface AppComponent extends AndroidInjector<App> {
     void inject(BaseApplication application); //
 }

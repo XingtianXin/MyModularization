@@ -13,6 +13,8 @@ import javax.inject.Singleton;
 
 import dagger.Component;
 import dagger.android.AndroidInjectionModule;
+import dagger.android.AndroidInjector;
+import dagger.android.DaggerApplication;
 import dagger.android.support.AndroidSupportInjectionModule;
 
 @Singleton
@@ -27,6 +29,8 @@ import dagger.android.support.AndroidSupportInjectionModule;
         //这个是专门为了在Activity & Fragment 中使用依赖注入使用的
         Module1AllActivityModule.class
 })
-public interface Module1Component {
-    void inject(BaseApplication application); //
+public interface Module1Component extends AndroidInjector<BaseApplication> {
+
+    @Override
+    void inject(BaseApplication application);
 }

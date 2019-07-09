@@ -40,6 +40,9 @@ public class MainActivity extends AppCompatActivity implements BlankFragment.OnF
     @BindView(R2.id.app_get_m2_fragment_button)
     Button getModule2FragmentButton;
 
+    @BindView(R2.id.app_m2_button)
+    Button startModule2Button;
+
     @OnClick(R2.id.app_button)
     public void onClickEvent(View view) {
         ARouter.getInstance().build(ARouterConstants.MODULE1_ACTIVITY)
@@ -65,6 +68,12 @@ public class MainActivity extends AppCompatActivity implements BlankFragment.OnF
         }
         Toast.makeText(this, "找到Fragment:" + m2Fragment.toString(), Toast.LENGTH_SHORT).show();
         getSupportFragmentManager().beginTransaction().add(R.id.root, m2Fragment).commit();
+    }
+
+    @OnClick(R2.id.app_m2_button)
+    public void startModule2(View view) {
+        ARouter.getInstance().build(ARouterConstants.MODULE2_ACTIVITY)
+                .navigation();
     }
 
     @Override

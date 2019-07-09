@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentManager;
 
 import com.example.basemodule.R;
 
+import dagger.android.AndroidInjection;
 import dagger.android.AndroidInjector;
 
 /**
@@ -61,6 +62,4 @@ public abstract class BaseActivity extends AppCompatActivity implements Fragment
             getSupportFragmentManager().removeOnBackStackChangedListener(this);
         }
     }
-
-    public abstract AndroidInjector<Fragment> supportFragmentInjector();
 }

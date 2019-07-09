@@ -50,6 +50,8 @@ dependencies {
     annotationProcessor 'com.google.dagger:dagger-compiler:2.22.1'
     annotationProcessor 'com.google.dagger:dagger-android-processor:2.22.1'
 
+    implementation "com.fewlaps.quitnowcache:quitnow-cache:1.5.0"
+
     // Lifecycle components
     implementation "android.arch.lifecycle:extensions:$ARCH_LIFECYCLE_VERSION"
     implementation "android.arch.lifecycle:runtime:$ARCH_LIFECYCLE_VERSION"

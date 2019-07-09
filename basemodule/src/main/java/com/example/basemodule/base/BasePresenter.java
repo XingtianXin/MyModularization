@@ -8,9 +8,9 @@ package com.example.basemodule.base;
 public class BasePresenter<T extends BaseMvpView> implements Presenter<T> {
     private T mMvpView;
 
-    public BasePresenter(T mMvpView) {
-        this.mMvpView = mMvpView;
-    }
+//    public BasePresenter(T mMvpView) {
+///      this.mMvpView = mMvpView;
+//    }
 
     @Override
     public void attachView(T mvpView) {

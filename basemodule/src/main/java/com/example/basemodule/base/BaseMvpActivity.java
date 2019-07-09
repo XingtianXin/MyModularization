@@ -17,19 +17,39 @@ import dagger.android.HasFragmentInjector;
  * Date: 2019/7/5
  * Time: 6:58
  */
-public abstract class BaseMvpActivity extends BaseActivity implements BaseMvpView , HasFragmentInjector {
+public abstract class BaseMvpActivity<T extends BasePresenter> extends BaseActivity implements BaseMvpView{
 
     @Inject
-    DispatchingAndroidInjector<Fragment> fragmentInjector;
+    protected T mPresenter;
+    @Inject
+    protected PresenterManager mPresenterManager;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
+        if (savedInstanceState != null && mPresenterManager.containsPresenter(savedInstanceState)) {
+            mPresenter = mPresenterManager.<T>restorePresenter(savedInstanceState);
+        }
+        if (mPresenter != null) {
+            mPresenter.attachView(this);
+        }
     }
 
     @Override
-    public AndroidInjector<Fragment> supportFragmentInjector() {
-        return fragmentInjector;
+    protected void onDestroy() {
+        if (mPresenter != null) {
+            mPresenter.detachView();
+        }
+        super.onDestroy();
     }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        if (mPresenter != null) {
+            mPresenterManager.savePresenter(mPresenter, outState);
+        }
+    }
+
 }
