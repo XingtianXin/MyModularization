@@ -9,7 +9,7 @@ import com.example.basemodule.base.BasePresenter;
  * Time: 14:42
  */
 public class Module2Presenter extends BasePresenter {
-    public Module2Presenter(BaseMvpView mMvpView) {
+    public Module2Presenter() {
         //super(mMvpView);
     }
 }
